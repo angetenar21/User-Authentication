@@ -3,10 +3,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const userRouter = require('./routes/userRouter');
+const taskRouter = require('./routes/taskRouter');
 const layouts = require('express-ejs-layouts');
 const passport = require('passport');
 require('./config/passport');
 const flash = require('connect-flash');
+
 
 const app = express();
 
@@ -41,6 +43,7 @@ mongoose.connect('mongodb://localhost:27017/authProj').then(() => {
 });
 
 app.use('/', userRouter);
+app.use('/', taskRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

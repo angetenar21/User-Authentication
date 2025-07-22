@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
+const taskController = require('../controllers/authController');
 
 //regiuster routes
 router.get('/register', authController.getRegister);
@@ -18,6 +19,7 @@ const ensureAuthenticated = (req, res, next) => {
   req.flash('error', 'You must be logged in to change password.');
   res.redirect('/login');
 };
+
 
 router.get('/change-password', ensureAuthenticated, authController.getChangePassword);
 router.post('/change-password', ensureAuthenticated, authController.postChangePassword);

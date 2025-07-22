@@ -58,6 +58,7 @@ exports.getDashboard = (req, res) => {
   res.render('dashboard', { user: req.user.username });
 }
 
+
 //render change password page
 exports.getChangePassword = (req, res) => {
   res.render('change-password', { title: 'Change Password' });
