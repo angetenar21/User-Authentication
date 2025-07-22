@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
-const taskController = require('../controllers/authController');
+const taskController = require('../controllers/taskController');
 
 //regiuster routes
 router.get('/register', authController.getRegister);
